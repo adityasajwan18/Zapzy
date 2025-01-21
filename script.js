@@ -30,4 +30,45 @@ document.getElementById('join-room-form').addEventListener('submit', async funct
 
     // Clear the input field
     document.getElementById('room-code').value = '';
+    // Highlight option on hover
+document.querySelectorAll('.option').forEach(option => {
+    option.addEventListener('mouseover', () => {
+        option.style.transform = 'scale(1.1)';
+        option.style.transition = 'transform 0.2s';
+    });
+
+    option.addEventListener('mouseout', () => {
+        option.style.transform = 'scale(1)';
+    });
+
+    option.addEventListener('click', () => {
+        console.log(`${option.textContent.trim()} selected.`);
+    });
+});
+// Common login validation script
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission
+
+    // Get input values
+    const id = document.querySelector('input[type="text"]').value.trim();
+    const password = document.querySelector('input[type="password"]').value.trim();
+
+    // Validate fields
+    if (!id) {
+        alert('Please enter your ID.');
+        return;
+    }
+    if (!password) {
+        alert('Please enter your password.');
+        return;
+    }
+
+    // Simulate successful login
+    alert('Login successful!');
+    console.log(`ID: ${id}, Password: ${password}`);
+
+    // Redirect to dashboard (dummy URL for now)
+    // window.location.href = '/dashboard.html';
+});
+
 });
