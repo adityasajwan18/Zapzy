@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapzy - Attendance Made Easy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH1zH6e9OTKzhUeWjMkgPqlDaWTf+9g6G2aUghbUgfYHiD8YrjsnKe2/6NeOt/8S2WjKMs7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #d9a7c7, #fffcdc);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+            animation: rotateHeader 10s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes rotateHeader {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #66bb6a;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(120deg, #e8f5e9, #f1f8e9);
+            color: #2e7d32;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .hero button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background: #66bb6a;
+            transform: translateY(-5px);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .feature {
+            flex: 1;
+            margin: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+            background: #f9f9f9;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: #4caf50;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #66bb6a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Zapzy</h1>
+        <p>Attendance made simple with the speed of light</p>
+    </header>
+
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Zapzy</h1>
+        <p>Effortlessly take and review attendance with our easy-to-use app.</p>
+        <a href="homepage.html"><button>Get Started</button></a>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Teacher Dashboard</h3>
+            <p>Create rooms, manage students, and review attendance in real-time.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Student Access</h3>
+            <p>Seamlessly join classes and view attendance records.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-wifi"></i>
+            <h3>Offline Functionality</h3>
+            <p>Works locally via teacher’s WiFi without the need for internet.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Contact us at <a href="mailto:mohitchamoli1207@gmail.com">support@zapzy.com</a></p>
+        <p>&copy; 2025 Zapzy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showModal() {
+            alert("Welcome to Zapzy! Start simplifying attendance today.");
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
