@@ -4,12 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fef4e8;
+            color: #2d2d2d;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            background: #fba638;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-container h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fba638;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            color: #2d2d2d;
+        }
+
+        input {
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 2px solid #fba638;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            padding: 0.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #fba638;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            background: #fba638;
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .tagline {
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="D:\zapzy\asset\zapzy.jpg" alt="Website Logo" id="logo">
+            <img src="asset/logo.jpg" alt="Website Logo" id="logo">
         </div>
         <h1>Zapzy</h1>
     </header>
@@ -28,13 +154,12 @@
 
     <footer>
         <div class="branding">
-            <p>© zapzy. All right reserved</p>
+            <p>© Zapzy. All rights reserved</p>
         </div>
         <div class="contact">
-            <p>Email us: <a href="mailto:adityasajwan18@gmail.com">Support from zapzy</a></p>
+            <p>Email us: <a href="mailto:adityasajwan18@gmail.com">Support from Zapzy</a></p>
             <p>Follow us:
-
-                <a href="https://www.linkdin.com/adityasajwan18" target="_blank">Linkdin</a> |
+                <a href="https://www.linkedin.com/adityasajwan18" target="_blank">LinkedIn</a> |
                 <a href="https://www.instagram.com/adityasajwan18" target="_blank">Instagram</a>
             </p>
         </div>
@@ -43,6 +168,29 @@
         </div>
     </footer>
     
-    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById('join-room-form');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const roomCode = document.getElementById('room-code').value;
+
+            if (roomCode.trim() === '') {
+                messageDiv.textContent = 'Please enter a valid room code.';
+                messageDiv.style.color = 'red';
+                messageDiv.style.marginTop = '1rem';
+            } else {
+                messageDiv.textContent = `Joining room: ${roomCode}`;
+                messageDiv.style.color = 'green';
+                messageDiv.style.marginTop = '1rem';
+
+                setTimeout(() => {
+                    messageDiv.textContent = '';
+                    // Simulate joining room process
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>
