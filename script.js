@@ -70,5 +70,74 @@ document.querySelector('form').addEventListener('submit', function (e) {
     // Redirect to dashboard (dummy URL for now)
     // window.location.href = '/dashboard.html';
 });
+document.getElementById('create-room-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form submission
+
+    const roomName = document.getElementById('room-name').value.trim();
+    const roomCode = document.getElementById('room-code').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+
+    if (!roomName || !roomCode || !subject) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // Add a success animation
+    const formContainer = document.querySelector('.form-container');
+    formContainer.style.animation = 'zoomOut 1s ease-in-out';
+    setTimeout(() => {
+        alert(`Room "${roomName}" created successfully! Room Code: ${roomCode}, Subject: ${subject}`);
+        console.log({ roomName, roomCode, subject });
+
+        // Optionally, clear the form
+        this.reset();
+
+        // Reset animation after success
+        formContainer.style.animation = 'zoomIn 1.5s ease-in-out';
+    }, 1000);
+});
+
+/* Add animation keyframes for zoomOut in CSS */
+// Dummy student data
+const students = [
+    { id: 'S001', name: 'John Doe', status: 'Present' },
+    { id: 'S002', name: 'Jane Smith', status: 'Absent' },
+    { id: 'S003', name: 'Alex Johnson', status: 'Present' },
+    { id: 'S004', name: 'Chris Lee', status: 'Absent' }
+];
+
+// Populate the table dynamically
+function populateAttendanceTable() {
+    const tableBody = document.querySelector('#attendance-table tbody');
+    tableBody.innerHTML = ''; // Clear existing rows
+
+    students.forEach(student => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td class="${student.status === 'Present' ? 'present' : 'absent'}">${student.status}</td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+// Simulate real-time updates
+function updateAttendance() {
+    // Simulate a status change for a random student
+    const randomIndex = Math.floor(Math.random() * students.length);
+    students[randomIndex].status = students[randomIndex].status === 'Present' ? 'Absent' : 'Present';
+
+    // Re-populate the table with updated data
+    populateAttendanceTable();
+}
+
+// Initial population of the table
+populateAttendanceTable();
+
+// Simulate updates every 5 seconds
+setInterval(updateAttendance, 5000);
 
 });

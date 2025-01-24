@@ -349,3 +349,248 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffeb3b, #f57c00);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #6200ea, #9c27b0);
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1.5s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main Styling */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+    background: linear-gradient(145deg, #ffffff, #e8e8e8);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 400px;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #6200ea;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #6200ea;
+}
+
+form button {
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #6200ea, #f57c00);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffeb3b, #f57c00);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #6200ea, #9c27b0);
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main Styling */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    animation: slideIn 1s ease-in-out;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6200ea;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table thead th {
+    background: linear-gradient(90deg, #6200ea, #9c27b0);
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+table tbody tr {
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+table tbody td {
+    padding: 10px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
